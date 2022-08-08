@@ -9,9 +9,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 #RUN pip3 install --no-cache-dir -U install setuptools pip
 #RUN pip3 install --no-cache-dir "cupy-cuda112[all]==9.0.0rc1"
 #RUN pip install torch torchvision opencv-python
-RUN pip install opencv-python
 RUN apt-get update -y
 RUN apt-get install ffmpeg libsm6 libxext6 -y
 RUN apt-get clean
+RUN pip install opencv-python scipy
 
 CMD ["python3", "/model/run.py"]
